@@ -37,4 +37,14 @@ Q Value = Quality of action
 
 3. Measure Reward
 
-4. Update Q Value and train model
+4. Update Q Value and train model 
+
+# Q Update Rule
+
+Q = model.predict(State0)
+
+New Q = Reward + Gamme Value * MAX(Q(state1))
+
+Loss Function:
+
+loss = (New Q - Q)*2
