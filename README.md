@@ -3,7 +3,7 @@ Reinforcement Learning and Deep Q Learning snake with pygames and pytorch
 
 
 # Reward System
-- eat food: +10
+- Eat food: +10
 - Game Over: -10
 - Else: 0
 
