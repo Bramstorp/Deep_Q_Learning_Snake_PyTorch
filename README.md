@@ -24,3 +24,17 @@ Dangers: Left, Forward, Left
 Direction: Up, Down, Left, Right
 
 Food: Up, Down, Left, Right
+
+# Q Learning
+
+Q Value = Quality of action
+
+0. Init Q Value (init model)
+
+1. Choose Action (model prediction of state)
+
+2. Perform Action
+
+3. Measure Reward
+
+4. Update Q Value and train model
