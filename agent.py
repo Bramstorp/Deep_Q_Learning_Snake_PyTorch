@@ -5,6 +5,7 @@ from collections import deque
 
 from snake_game import SnakeGameAI, Direction, Point
 from model import DQN, Qtrain
+from helper import plot
 
 MAX_MEMORY = 100_000
 BATCH_SIZE = 1000
@@ -146,6 +147,12 @@ def train():
             print("Game:", agent.number_games)
             print("Score:", score)
             print("Record:", record)
+
+            plot_scores.append(score)
+            total_score += score
+            mean_score = total_score / agent.n_games
+            plot_avg_scores.append(mean_score)
+            plot(plot_scores, plot_avg_scores)
 
 
 if __name__ == '__main__':
