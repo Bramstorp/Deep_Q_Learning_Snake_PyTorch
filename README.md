@@ -1,6 +1,9 @@
 # Deep_Q_Learning_Snake_PyTorch
 Reinforcement Learning and Deep Q Learning snake with pygames and pytorch
 
+# Run Training
+
+- Python3 agent.py
 
 # Reward System
 - Eat food: +10
