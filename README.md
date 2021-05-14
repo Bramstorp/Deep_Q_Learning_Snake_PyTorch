@@ -3,7 +3,11 @@ Reinforcement Learning and Deep Q Learning snake with pygames and pytorch
 
 # Run Training
 
-- Python3 agent.py
+### `python3 agent.py`
+
+# Requirments modules
+
+### `pip3 install pygames torchvision numpy matplotlib`
 
 # Reward System
 - Eat food: +10
