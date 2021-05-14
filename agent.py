@@ -30,7 +30,7 @@ class Agent:
         dir_d = game.direction == Direction.DOWN
 
         state = [
-            # Danger straight
+            # Danger forward
             (dir_r and game.is_collision(point_r)) or
             (dir_l and game.is_collision(point_l)) or
             (dir_u and game.is_collision(point_u)) or
