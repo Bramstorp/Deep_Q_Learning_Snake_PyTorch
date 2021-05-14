@@ -127,8 +127,8 @@ def train():
         new_state = agent.get_state(game)
 
         # train short memory
-        agent.train_long_memory(old_state, final_move,
-                                reward, new_state, game_over)
+        agent.train_short_memory(old_state, final_move,
+                                 reward, new_state, game_over)
 
         # remember
         agent.remember(old_state, final_move,
