@@ -15,7 +15,9 @@ class Agent:
     def __init__(self):
         self.number_games = 0
         self.epsilon = 0
-        self.gamma = 0
+
+        # Discount rate
+        self.gamma = 0.9
         self.memory = deque(maxlen=MAX_MEMORY)
 
         # State, hidden_layer, Action
@@ -95,8 +97,9 @@ class Agent:
             move = random.randint(0, 2)
             final_move[move] = 1
         else:
-            prediction = self.model.predict(
-                torch.tensor(state, dtype=torch.float))
+            prediction = self.model(
+                torch.tensor(state, dtype=torch.float)
+            )
             move = torch.argmax(prediction).item()
             final_move[move] = 1
 
