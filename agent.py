@@ -4,6 +4,7 @@ import numpy as np
 from collections import deque
 
 from snake_game import SnakeGameAI, Direction, Point
+from model import DQN, Qtrain
 
 MAX_MEMORY = 100_000
 BATCH_SIZE = 1000
@@ -16,8 +17,12 @@ class Agent:
         self.epsilon = 0
         self.gamma = 0
         self.memory = deque(maxlen=MAX_MEMORY)
-        self.model = None
-        self.trainer = None
+
+        # State, hidden_layer, Action
+        self.model = DQN(11, 256, 3)
+        self.trainer = Qtrain(
+            self.model, learn_rate=LEARNING_RATE, gamma=self.gamma
+        )
 
     def get_state(self, game):
         head = game.snake[0]
@@ -133,6 +138,7 @@ def train():
 
             if score > record:
                 record = score
+                agent.model.save()
 
             print("Game:", agent.number_games)
             print("Score:", score)
