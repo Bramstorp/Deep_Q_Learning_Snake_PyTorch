@@ -110,7 +110,7 @@ class Agent:
 def train():
     plot_scores = []
     plot_avg_scores = []
-    total_score = []
+    total_score = 0
     record = 0
     agent = Agent()
     game = SnakeGameAI()
@@ -150,7 +150,7 @@ def train():
 
             plot_scores.append(score)
             total_score += score
-            mean_score = total_score / agent.n_games
+            mean_score = total_score / agent.number_games
             plot_avg_scores.append(mean_score)
             plot(plot_scores, plot_avg_scores)
 
